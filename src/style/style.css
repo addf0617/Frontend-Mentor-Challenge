@@ -1,0 +1,100 @@
+:root {
+  --backgroundColor: rgb(250, 250, 250);
+  --borderColor: rbg(219, 229, 230);
+  /* --font-family: "Karla", sans-serif; */
+}
+
+/*   @font-face {
+    font-family: "Karla";
+    src: url("../../challenge/contact-form-main/assets/fonts/Karla-VariableFont_wght.ttf")
+      format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  } */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.HTML-tag {
+  color: rgb(106, 190, 205);
+  font-weight: 700;
+}
+
+.CSS-tag {
+  color: rgb(62, 84, 163);
+  font-weight: 700;
+}
+
+.JS-tag {
+  color: rgb(207, 99, 144);
+  font-weight: 700;
+}
+
+.Tailwind-tag {
+  color: #0ea6ea;
+  font-weight: 700;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  font-family: var(--font-family);
+}
+body main {
+  padding: 1rem;
+}
+body main .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+body main .container .card {
+  width: 350px;
+  height: 200px;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid var(--borderColor);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+body main .container .card .card-head {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body main .container .card .card-head img {
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+body main .container .card .card-head img:hover {
+  transform: scale(1.05);
+}
+body main .container .card .card-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+body main .container .card .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 400px) {
+  body main {
+    padding: 0.5rem;
+  }
+  body main .container .card {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
