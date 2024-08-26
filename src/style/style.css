@@ -62,6 +62,7 @@ body main .container .card {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 body main .container .card .card-head {
   width: 100%;
@@ -91,7 +92,10 @@ body main .container .card .card-footer {
 
 @media screen and (max-width: 400px) {
   body main {
-    padding: 0.5rem;
+    margin: 1rem;
+  }
+  body main .container {
+    gap: 2rem;
   }
   body main .container .card {
     width: 100%;
