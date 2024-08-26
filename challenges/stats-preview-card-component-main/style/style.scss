@@ -1,0 +1,165 @@
+:root {
+  --background-color: hsl(233, 47%, 7%);
+  --card-background-color: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  --accent-color-light: hsl(277, 64%, 61%, 0.55);
+  --white-text: hsl(0, 0%, 100%);
+  --main-text-color: hsla(0, 0%, 100%, 0.75);
+  --font-size: 15px;
+  --font-Inter: "Inter", sans-serif;
+  --font-Inter-700: "Inter-700", sans-serif;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("https://fonts.google.com/specimen/Inter");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-700", sans-serif;
+  src: url("https://fonts.google.com/specimen/Inter");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--white-text);
+  font-family: var(--font-Inter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  main {
+    margin: 3rem 1rem;
+    .card {
+      max-width: 1440px;
+      background-color: var(--card-background-color);
+      display: flex;
+      border-radius: 1rem;
+      line-height: 1.5;
+      & > div {
+        flex-basis: 50%;
+      }
+      .card-info {
+        margin: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        .card-head {
+          h1 {
+            font-family: var(--font-Inter-700);
+            font-size: 2rem;
+            span {
+              color: var(--accent-color);
+            }
+          }
+        }
+
+        .card-body {
+          color: var(--main-text-color);
+        }
+
+        .card-stats {
+          display: flex;
+          flex-basis: 0;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .stat {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+              font-family: var(--font-Inter-700);
+            }
+            p {
+              font-size: 0.8rem;
+              opacity: 0.8;
+              letter-spacing: 0.05rem;
+              color: var(--main-text-color);
+            }
+          }
+        }
+      }
+      .card-image {
+        position: relative;
+        .mask {
+          width: 100%;
+          height: 100%;
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: var(--accent-color-light);
+          z-index: 10;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          object-fit: cover;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    main {
+      .card {
+        height: auto;
+        flex-direction: column-reverse;
+        .card-image {
+          .mask {
+            border-top-left-radius: 1rem;
+            border-bottom-right-radius: 0;
+          }
+          img {
+            border-top-left-radius: 1rem;
+            border-bottom-right-radius: 0;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    main {
+      .card {
+        .card-info {
+          .card-stats {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            .stat {
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
